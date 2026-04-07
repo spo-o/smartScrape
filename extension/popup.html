@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page RAG</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="hero">
+        <p class="eyebrow">Current Page Assistant</p>
+        <h1>Ask the page</h1>
+        <p class="subtle">Grounded Q&amp;A with local RAG plus export-ready notes.</p>
+      </header>
+
+      <section class="card">
+        <label for="backendUrl">Backend URL</label>
+        <input id="backendUrl" value="http://127.0.0.1:8000" />
+        <button id="processBtn" class="secondary">Process page</button>
+        <p id="processStatus" class="status">Ready.</p>
+      </section>
+
+      <section class="card">
+        <label for="questionInput">Question</label>
+        <textarea id="questionInput" rows="4" placeholder="What does this page say about..."></textarea>
+        <button id="askBtn">Ask</button>
+        <div class="output">
+          <h2>Answer</h2>
+          <pre id="answerOutput">No answer yet.</pre>
+          <h3>Sources</h3>
+          <ul id="sourcesOutput"></ul>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="notesHeader">
+          <label for="notesFormat">Save key points</label>
+          <select id="notesFormat">
+            <option value="markdown">Markdown</option>
+            <option value="json">JSON</option>
+          </select>
+        </div>
+        <button id="saveBtn" class="secondary">Generate notes</button>
+        <div class="output">
+          <h2>Notes</h2>
+          <pre id="notesOutput">No notes yet.</pre>
+        </div>
+      </section>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
